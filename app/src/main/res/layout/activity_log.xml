@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textColor="#CCCCCC"
+    android:background="@color/white"
+    tools:context=".LogActivity">
+    <RelativeLayout
+        android:id="@+id/logAct_nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="81sp"
+        android:layout_alignParentBottom="true">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.7sp"
+            android:background="#CCCCCC"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="80sp"/>
+
+        <RelativeLayout
+            android:id="@+id/logAct_block_dashboard"
+            android:layout_width="80sp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10sp"
+            android:padding="10sp">
+
+            <ImageView
+                android:id="@+id/logAct_homebtn"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_home_grayo"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textAlignment="center"
+                style="@style/size12Text_gray"
+                android:text="Dashboard"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/logAct_block_inventory"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10sp"
+            android:layout_toEndOf="@id/logAct_block_dashboard"
+            android:padding="10sp">
+
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_marginTop="5sp"
+                android:src="@drawable/ic_inventory_grayo"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/logAct_editInventory_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="Edit Inventory"
+                android:textAlignment="center"
+                style="@style/size12Text_gray"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/logAct_block_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="0sp"
+            android:layout_toEndOf="@id/logAct_block_inventory"
+            android:padding="10sp">
+
+            <ImageView
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_profile_grayo"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="User Profile"
+                android:textAlignment="center"
+                style="@style/size12Text_gray"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/logAct_block_scanQr"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/logAct_block_profile"
+            android:padding="10sp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="Log Inventory"
+                android:textAlignment="textStart"
+                style="@style/size12Text_gray"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="80sp"
+        android:layout_height="80sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="30sp"
+        android:background="@drawable/button_green"
+
+        android:elevation="5sp">
+
+
+        <ImageView
+            android:id="@+id/logAct_logInventory_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15sp"
+            android:src="@drawable/ic_qr"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/logAct_fragment_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/logAct_nav_bar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.camera.view.PreviewView
+                android:id="@+id/cameraPreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageButton
+                android:layout_width="60sp"
+                android:layout_height="60sp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="80sp"
+                android:id="@+id/capture"
+                android:scaleType="centerCrop"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src = "@drawable/take_pic"
+                app:tint="#fff" />
+
+            <ImageButton
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="10sp"
+                android:src="@drawable/baseline_flash_on_24"
+                app:tint="#fff"
+                android:id="@+id/toggleFlash"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+
+            <ImageButton
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:layout_below="@id/toggleFlash"
+                android:layout_marginEnd="10sp"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/flipCamera"
+                android:src="@drawable/round_flip_camera_android_24"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:tint="#fff" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="Please Scan Medicine"
+                android:textSize="24sp"
+                android:paddingTop="30dp"
+                android:paddingLeft="20dp"
+                android:gravity="top"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/barcodeID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="15dp"
+                android:textSize="24sp"
+                android:layout_alignParentBottom="true"
+                tools:text="Barcode Value: "/>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

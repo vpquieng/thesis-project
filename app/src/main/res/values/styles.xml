@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="size12Text_gray" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#4D4D4D</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="size12Text_blue" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#5075E8</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+</resources>
